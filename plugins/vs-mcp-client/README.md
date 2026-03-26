@@ -59,6 +59,16 @@ Install via the Claude Code marketplace:
 /plugin install vs-mcp-client
 ```
 
+## Commands
+
+### `/build`
+
+Builds the Visual Studio solution using the `ExecuteCommand` MCP tool (`Build.BuildSolution`). Reports success or displays any build errors.
+
+```
+/build
+```
+
 ## Skills
 
 ### `/vs-mcp`
