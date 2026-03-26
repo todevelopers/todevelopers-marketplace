@@ -68,7 +68,3 @@ After installation, invoke the `/vs-mcp` skill to activate semantic mode for you
 ```
 
 This instructs Claude to use VS MCP semantic tools instead of Grep/Glob/LS when working on C# code — providing ~90% fewer tokens and compiler-accurate results.
-
-## Author
-
-**ToDevelopers**
