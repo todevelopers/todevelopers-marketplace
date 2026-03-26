@@ -30,9 +30,9 @@ List installed marketplaces:
 
 ## Available Plugins
 
-### VS-MCP client
+### VS MCP client
 
-A Claude Code plugin that connects Claude Code to the [VS-MCP Server](https://marketplace.visualstudio.com/items?itemName=LadislavSopko.mcpserverforvs) — a Visual Studio 2022 extension exposing C#/Roslyn semantic analysis and the VS debugger via the Model Context Protocol (MCP).
+A Claude Code plugin that connects Claude Code to the [VS MCP Server](https://marketplace.visualstudio.com/items?itemName=LadislavSopko.mcpserverforvs) — a Visual Studio 2022 extension exposing C#/Roslyn semantic analysis and the VS debugger via the Model Context Protocol (MCP).
 
 ## Marketplace Structure
 
