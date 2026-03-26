@@ -30,7 +30,7 @@ List installed marketplaces:
 
 ## Available Plugins
 
-### vs-mcp-client `v0.0.1`
+### vs-mcp-client
 
 Connects Claude Code to a locally running **VS MCP** server via the Model Context Protocol.
 
