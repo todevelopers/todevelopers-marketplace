@@ -30,22 +30,9 @@ List installed marketplaces:
 
 ## Available Plugins
 
-### vs-mcp-client
+### VS-MCP client
 
-Connects Claude Code to a locally running **VS MCP** server via the Model Context Protocol.
-
-Registers the following MCP server in your Claude Code configuration:
-
-```json
-{
-  "vs-mcp": {
-    "command": "npx",
-    "args": ["-y", "mcp-remote", "http://localhost:3001/sdk/"]
-  }
-}
-```
-
-**Requirements:** A VS MCP server running at `http://localhost:3001/sdk/` and `npx` available in your `PATH`.
+A Claude Code plugin that connects Claude Code to the [VS-MCP Server](https://marketplace.visualstudio.com/items?itemName=LadislavSopko.mcpserverforvs) — a Visual Studio 2022 extension exposing C#/Roslyn semantic analysis and the VS debugger via the Model Context Protocol (MCP).
 
 ## Marketplace Structure
 
