@@ -59,12 +59,20 @@ Install via the Claude Code marketplace:
 /plugin install vs-mcp-client
 ```
 
-## Usage
+## Skills
 
-After installation, invoke the `/vs-mcp` skill to activate semantic mode for your session:
+### `/vs-mcp`
+
+Activates semantic mode for C# development. Claude will prefer VS MCP tools over Grep/Glob/LS when working on C# code — providing ~90% fewer tokens and compiler-accurate results.
 
 ```
 /vs-mcp
 ```
 
-This instructs Claude to use VS MCP semantic tools instead of Grep/Glob/LS when working on C# code — providing ~90% fewer tokens and compiler-accurate results.
+### `/vs-mcp-debug`
+
+Activates debugging mode, giving Claude a complete reference for the 19 VS MCP debugger tools: process attachment, breakpoints, call stack, variable inspection, stepping, and transport support (local, Docker, WSL).
+
+```
+/vs-mcp-debug
+```
