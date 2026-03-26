@@ -1,5 +1,5 @@
 {
-  "name": "vs-mcp-client",
+  "name": "VS-MCP-client",
   "version": "0.0.1",
   "description": "Connects Claude Code to a local VS MCP server running at http://localhost:3001/sdk/.",
   "author": {
