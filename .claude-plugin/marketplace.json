@@ -8,8 +8,8 @@
     {
       "name": "vs-mcp-client",
       "source": "./plugins/vs-mcp-client",
-      "description": "Connects Claude Code to vs-mcp server.",
-      "version": "0.0.1",
+      "description": "Connects Claude Code to VS MCP Server (Visual Studio 2022 extension) for semantic C#/Roslyn analysis and debugging.",
+      "version": "1.0.0",
       "author": {
         "name": "ToDevelopers"
       }
