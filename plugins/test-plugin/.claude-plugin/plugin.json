@@ -12,5 +12,15 @@
       "type": "number",
       "sensitive": false
     }
+  },
+  "mcpServers": {
+    "test-mcp": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "mcp-remote",
+        "http://localhost:${user_config.port}/test/"
+      ]
+    }
   }
 }
