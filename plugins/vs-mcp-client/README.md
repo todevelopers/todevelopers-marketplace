@@ -4,7 +4,7 @@ A Claude Code plugin that connects Claude Code to the **VS MCP Server** — a Vi
 
 ## What it does
 
-This plugin registers the `vs-mcp` MCP server in your Claude Code configuration. It uses `mcp-remote` to connect to a locally running VS MCP server at `http://localhost:<port>/sdk/`. The port is configurable — you will be prompted to enter it when enabling the plugin (default: `3001`).
+This plugin registers the `vs-mcp` MCP server in your Claude Code configuration. It uses `mcp-remote` to connect to a locally running VS MCP server at `http://localhost:3001/sdk/`.
 
 Once installed, Claude Code gains access to 41 semantic tools powered by Roslyn and the Visual Studio debugger — enabling accurate code navigation and refactoring without relying on text search.
 
@@ -36,14 +36,6 @@ Breakpoint management, call stack inspection, variable evaluation, process attac
 - **Visual Studio 2022** (version 17.13 or later) with the [VS MCP Server](https://marketplace.visualstudio.com/items?itemName=LadislavSopko.mcpserverforvs) extension installed and running
 - `npx` available in your `PATH` (comes with Node.js)
 
-## Configuration
-
-When enabling the plugin you will be prompted for:
-
-| Setting | Description | Default |
-|---|---|---|
-| `server_port` | Port the VS MCP Server is listening on | `3001` |
-
 ## MCP server configuration added
 
 ```json
@@ -53,7 +45,7 @@ When enabling the plugin you will be prompted for:
     "args": [
       "-y",
       "mcp-remote",
-      "http://localhost:<server_port>/sdk/"
+      "http://localhost:3001/sdk/"
     ]
   }
 }
