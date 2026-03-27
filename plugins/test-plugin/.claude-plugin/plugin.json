@@ -1,6 +1,6 @@
 {
   "name": "test-plugin",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Test plugin connecting Claude Code to a local MCP server at http://localhost:3001/test/.",
   "author": {
     "name": "ToDevelopers"
