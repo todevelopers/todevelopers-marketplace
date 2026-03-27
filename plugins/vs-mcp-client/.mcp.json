@@ -5,7 +5,7 @@
       "args": [
         "-y",
         "mcp-remote",
-        "http://localhost:3001/sdk/"
+        "http://localhost:${user_config.server_port}/sdk/"
       ]
     }
   }
