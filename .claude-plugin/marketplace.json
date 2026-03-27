@@ -13,6 +13,15 @@
       "author": {
         "name": "ToDevelopers"
       }
+    },
+    {
+      "name": "test-plugin",
+      "source": "./plugins/test-plugin",
+      "description": "Test plugin connecting Claude Code to a local MCP server at http://localhost:3001/test/.",
+      "version": "0.0.1",
+      "author": {
+        "name": "ToDevelopers"
+      }
     }
   ]
 }
