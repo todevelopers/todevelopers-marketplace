@@ -4,5 +4,11 @@
   "description": "Test plugin connecting Claude Code to a local MCP server at http://localhost:3001/test/.",
   "author": {
     "name": "ToDevelopers"
+  },
+  "userConfig": {
+    "port": {
+      "description": "Port of the local MCP server",
+      "sensitive": false
+    }
   }
 }

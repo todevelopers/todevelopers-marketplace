@@ -4,22 +4,22 @@ A minimal test plugin that connects Claude Code to a local MCP server.
 
 ## MCP Server
 
-Connects to `http://localhost:${TEST_MCP_PORT}/test/` via `mcp-remote`.
-
-Default port: `3001`.
+Connects to `http://localhost:<port>/test/` via `mcp-remote`.
 
 ## Configuration
 
-| Environment Variable | Default | Description |
-|---|---|---|
-| `TEST_MCP_PORT` | `3001` | Port of the local MCP server |
+When you enable the plugin, Claude Code will prompt you for:
 
-To use a different port, set `TEST_MCP_PORT` in your environment or override it in `.mcp.json`.
+| Property | Description | Sensitive |
+|---|---|---|
+| `port` | Port of the local MCP server | No |
+
+The value is stored in `settings.json` and substituted into the MCP server URL automatically.
 
 ## Requirements
 
 - Node.js / npx available
-- Local MCP server running at `http://localhost:<TEST_MCP_PORT>/test/`
+- Local MCP server running at `http://localhost:<port>/test/`
 
 ## Installation
 

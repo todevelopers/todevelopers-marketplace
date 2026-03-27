@@ -1,14 +1,12 @@
 {
   "mcpServers": {
     "test-mcp": {
-      "command": "sh",
+      "command": "npx",
       "args": [
-        "-c",
-        "npx -y mcp-remote http://localhost:${TEST_MCP_PORT:-3001}/test/"
-      ],
-      "env": {
-        "TEST_MCP_PORT": "3001"
-      }
+        "-y",
+        "mcp-remote",
+        "http://localhost:${user_config.port}/test/"
+      ]
     }
   }
 }
