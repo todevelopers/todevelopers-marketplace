@@ -7,7 +7,9 @@
   },
   "userConfig": {
     "port": {
+      "title": "MCP Server Port",
       "description": "Port of the local MCP server",
+      "type": "number",
       "sensitive": false
     }
   }
