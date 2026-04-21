@@ -34,6 +34,10 @@ List installed marketplaces:
 
 A Claude Code plugin that connects Claude Code to the [VS MCP Server](https://marketplace.visualstudio.com/items?itemName=LadislavSopko.mcpserverforvs) — a Visual Studio 2022 extension exposing C#/Roslyn semantic analysis and the VS debugger via the Model Context Protocol (MCP).
 
+### mcp-builder
+
+A Claude Code plugin providing skills for building, packaging, and submitting MCP servers and apps. Includes skills for scaffolding MCP servers (`build-mcp-server`), adding interactive UI (`build-mcp-app`), bundling into distributable MCPB packages (`build-mcpb`), and walking through Anthropic's MCPB directory submission (`mcpb-submission-guide`).
+
 ## Marketplace Structure
 
 ```
@@ -41,10 +45,23 @@ claude-marketplace/
 ├── .claude-plugin/
 │   └── marketplace.json       # Marketplace metadata
 └── plugins/
-    └── vs-mcp-client/
+    ├── vs-mcp-client/
+    │   ├── .claude-plugin/
+    │   │   └── plugin.json    # Plugin metadata
+    │   ├── .mcp.json          # MCP server configuration
+    │   └── README.md
+    └── mcp-builder/
         ├── .claude-plugin/
         │   └── plugin.json    # Plugin metadata
-        ├── .mcp.json          # MCP server configuration
+        ├── skills/
+        │   ├── build-mcp-server/
+        │   │   └── SKILL.md
+        │   ├── build-mcp-app/
+        │   │   └── SKILL.md
+        │   ├── build-mcpb/
+        │   │   └── SKILL.md
+        │   └── mcpb-submission-guide/
+        │       └── SKILL.md
         └── README.md
 ```
 

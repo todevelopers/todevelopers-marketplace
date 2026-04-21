@@ -22,6 +22,15 @@
       "author": {
         "name": "ToDevelopers"
       }
+    },
+    {
+      "name": "mcp-builder",
+      "source": "./plugins/mcp-builder",
+      "description": "Skills for building MCP servers, MCP apps, and MCPB packages — from scaffolding to submission-ready bundles.",
+      "version": "1.0.0",
+      "author": {
+        "name": "ToDevelopers"
+      }
     }
   ]
 }

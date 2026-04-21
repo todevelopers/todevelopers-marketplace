@@ -1,0 +1,8 @@
+{
+  "name": "mcp-builder",
+  "version": "1.0.0",
+  "description": "Skills for building MCP servers, MCP apps, and MCPB packages — from scaffolding to submission-ready bundles.",
+  "author": {
+    "name": "ToDevelopers"
+  }
+}
