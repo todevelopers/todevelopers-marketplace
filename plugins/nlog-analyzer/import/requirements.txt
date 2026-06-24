@@ -1,0 +1,5 @@
+# No external packages required.
+# This script uses only Python standard library modules:
+#   sqlite3, re, os, argparse, logging, pathlib
+#
+# Python 3.8+ is required.

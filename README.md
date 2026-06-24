@@ -38,6 +38,10 @@ A Claude Code plugin that connects Claude Code to the [VS MCP Server](https://ma
 
 A Claude Code plugin providing skills for building, packaging, and submitting MCP servers and apps. Includes skills for scaffolding MCP servers (`build-mcp-server`), adding interactive UI (`build-mcp-app`), bundling into distributable MCPB packages (`build-mcpb`), and walking through Anthropic's MCPB directory submission (`mcpb-submission-guide`).
 
+### nlog-analyzer
+
+A Claude Code plugin for analyzing NLog trace logs. Imports `.log` files (recursively, with deduplication and multiline stack-trace handling) into a SQLite database, then lets you query them in natural language via `/nlog:import` and `/nlog:analyze`. Bundles the `sqlite-logs` MCP server (`mcp-sqlite-tools`) and an `nlog-analyst` skill. Requires Python 3.8+ (standard library only) and Node.js/npx.
+
 ## Marketplace Structure
 
 ```
@@ -50,18 +54,32 @@ claude-marketplace/
     │   │   └── plugin.json    # Plugin metadata
     │   ├── .mcp.json          # MCP server configuration
     │   └── README.md
-    └── mcp-builder/
+    ├── mcp-builder/
+    │   ├── .claude-plugin/
+    │   │   └── plugin.json    # Plugin metadata
+    │   ├── skills/
+    │   │   ├── build-mcp-server/
+    │   │   │   └── SKILL.md
+    │   │   ├── build-mcp-app/
+    │   │   │   └── SKILL.md
+    │   │   ├── build-mcpb/
+    │   │   │   └── SKILL.md
+    │   │   └── mcpb-submission-guide/
+    │   │       └── SKILL.md
+    │   └── README.md
+    └── nlog-analyzer/
         ├── .claude-plugin/
         │   └── plugin.json    # Plugin metadata
+        ├── .mcp.json          # MCP server (sqlite-logs)
+        ├── commands/
+        │   ├── import.md      # /nlog:import
+        │   └── analyze.md     # /nlog:analyze
         ├── skills/
-        │   ├── build-mcp-server/
-        │   │   └── SKILL.md
-        │   ├── build-mcp-app/
-        │   │   └── SKILL.md
-        │   ├── build-mcpb/
-        │   │   └── SKILL.md
-        │   └── mcpb-submission-guide/
+        │   └── nlog-analyst/
         │       └── SKILL.md
+        ├── import/
+        │   ├── nlog_import.py
+        │   └── requirements.txt
         └── README.md
 ```
 

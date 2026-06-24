@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "sqlite-logs": {
+      "command": "npx",
+      "args": ["-y", "mcp-sqlite-tools"]
+    }
+  }
+}
