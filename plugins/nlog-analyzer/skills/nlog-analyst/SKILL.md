@@ -118,3 +118,58 @@ Key observations:
 4. **Use call chains**: The last line of `stack_trace` (the `A => B => C` line) shows the logical path to the error
 5. **Cross-reference threads**: If multiple threads failed at the same time, look for a shared class/method in their stack traces
 6. **Parse errors table**: Check `parse_errors` table for log lines that couldn't be parsed — may indicate log corruption or format changes
+
+---
+
+## Cross-referencing with source code via VS MCP
+
+When `plugin_nlog-analyzer_vs-mcp` MCP server is available (Visual Studio 2022 open with VS MCP Server extension running), **always enrich log analysis with source code context**. Do this automatically after identifying errors or suspicious patterns — do not wait for the user to ask.
+
+### When to cross-reference
+
+Cross-reference with source code whenever you find:
+- An ERROR or FATAL entry with a known `class` and `method`
+- A repeating exception type or call chain
+- An unexpected sequence of TRACE/DEBUG entries suggesting wrong code path
+- A class/method that appears frequently in errors but rarely in normal flow
+
+### How to cross-reference
+
+For each key class/method identified in the logs:
+
+1. **Find the definition** — use `FindSymbolDefinition` with the class or method name from the `class`/`method` log columns.
+   - If the class name is ambiguous (multiple matches), narrow by assembly from the `assembly` log column.
+
+2. **Inspect the code** — read the relevant method body. Focus on:
+   - Exception handling (`try/catch`) — is the exception swallowed or re-thrown?
+   - Null checks — could any parameter be null at the point of failure?
+   - Conditions that match the log message text (e.g. a string in `throw new Exception("...")`)
+
+3. **Trace call chains** — if the log `stack_trace` shows a call chain `A => B => C`, use `GetMethodCallers` on the innermost method (`C`) to verify it matches what the logs show. Use `GetMethodCalls` to see what `C` calls further.
+
+4. **Check related callers** — use `GetMethodCallers` on the failing method to understand all places it is called from. If the error only occurs for some callers, the issue may be in how the caller constructs its arguments.
+
+5. **Look for recent changes** — if the source reveals a suspicious pattern, mention it to the user and suggest checking git blame or recent commits for that method.
+
+### How to present combined findings
+
+After cross-referencing, present findings in two layers:
+
+**Layer 1 — Log evidence** (what the logs show):
+- Timestamp range, process/thread IDs, frequency
+- Error message and exception type
+- Call chain from `stack_trace`
+
+**Layer 2 — Source code context** (what VS MCP reveals):
+- Actual method body or relevant excerpt
+- Whether the exception is thrown explicitly or propagated
+- Any suspicious conditions or missing null-guards
+- Other callers that could trigger the same path
+
+### Fallback when VS MCP is not available
+
+If `plugin_nlog-analyzer_vs-mcp` is not connected (VS not running or extension not installed), skip source cross-referencing silently and note at the end of your analysis:
+
+> _Source code cross-reference not available — start Visual Studio 2022 with VS MCP Server extension to enable it._
+
+Do **not** fall back to Grep or file-based search as a substitute — without Roslyn semantics the results would be unreliable for .NET codebases.

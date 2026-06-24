@@ -36,7 +36,7 @@
       "name": "nlog-analyzer",
       "source": "./plugins/nlog-analyzer",
       "description": "Analyzes NLog trace logs: imports .log files into SQLite and enables natural-language querying via Claude.",
-      "version": "1.4.1",
+      "version": "2.0.0",
       "author": {
         "name": "ToDevelopers"
       }

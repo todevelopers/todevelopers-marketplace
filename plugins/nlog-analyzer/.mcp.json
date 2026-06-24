@@ -3,6 +3,10 @@
     "sqlite-logs": {
       "command": "npx",
       "args": ["-y", "mcp-sqlite-tools"]
+    },
+    "vs-mcp": {
+      "command": "npx",
+      "args": ["-y", "mcp-remote", "http://localhost:3001/sdk/"]
     }
   }
 }

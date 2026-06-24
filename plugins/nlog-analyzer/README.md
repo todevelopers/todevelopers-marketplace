@@ -17,6 +17,7 @@ A Claude Code plugin for analyzing NLog trace logs. Imports `.log` files into SQ
 
 - **Python 3.8+** — `nlog_import.py` uses only the standard library, no `pip install` needed
 - **Node.js / npx** — for `mcp-sqlite-tools` MCP server (auto-downloaded via `npx -y mcp-sqlite-tools`)
+- **Visual Studio 2022 + VS MCP Server extension** _(optional)_ — enables automatic source code cross-referencing during log analysis
 
 ---
 
@@ -141,6 +142,20 @@ Example:
 2026-02-20 15:11:09.6951|17988|8|TRACE|MyPlugin|MyAssembly|MyClass|MyMethod|()
 2026-02-20 13:54:36.6961|20740|5|ERROR|||HttpConnector|SendBase|Unhandled Exception: ...
 ```
+
+---
+
+## Source code cross-referencing (VS MCP)
+
+When Visual Studio 2022 is open with the [VS MCP Server](https://marketplace.visualstudio.com/items?itemName=LadislavSopko.mcpserverforvs) extension running, Claude automatically enriches log analysis with source code context — no extra command needed.
+
+For each error or suspicious pattern found in the logs, Claude will:
+- Look up the failing class/method in the source using Roslyn semantic tools (`FindSymbolDefinition`, `GetMethodCallers`, `GetMethodCalls`)
+- Identify whether the exception is thrown explicitly or propagated
+- Spot missing null-guards or suspicious conditions that match the log message
+- Suggest callers worth investigating
+
+If VS is not running, analysis still works normally from logs alone. Claude will note at the end of the analysis that source cross-reference is unavailable.
 
 ---
 
