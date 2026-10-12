@@ -1,3 +1,8 @@
+---
+name: nlog-analyst
+description: This skill activates when working with NLog pipe-delimiter trace logs. Use it to correctly interpret log fields, error patterns, and stack traces.
+---
+
 # NLog Analyst Skill
 
 **Triggers:** activate this skill automatically when the user says phrases like "analyzuj logy", "analyze logs", "čo sa deje v logoch", "query the logs", "pozri sa do logov", "preskúmaj logy", "what's in the logs", "log analysis", "trace log", or when working with a `trace_logs.db` SQLite database.
